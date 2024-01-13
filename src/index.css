@@ -1,0 +1,1033 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  max-width: 1440px;
+  margin: auto;
+}
+/* ----------------------HEDER------------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 19px;
+  padding-bottom: 76px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+header.small {
+  padding-bottom: 27px;
+}
+header .burger {
+  display: none;
+  background-color: transparent;
+  border: none;
+  place-items: center;
+}
+header .menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 550px;
+  height: 100dvh;
+  opacity: 0;
+  transform: translateX(110%);
+  pointer-events: none;
+  transition:  all  cubic-bezier(.77,.2,.05,1) 0.5s;
+  background-color: white;
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.4);
+
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  
+  
+ font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  color: black;
+
+  z-index: 9999;
+  cursor: unset !important;
+.close{
+    position: absolute;
+    top: 47px;
+    right: 42px;
+
+    display: grid;
+    place-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+  a{
+    text-decoration: none;
+  }
+  a.active{
+    color: #393 !important;
+  }
+  a:visited{
+    color: black;
+  }
+}
+@media (max-width: 965px) {
+  header .burger {
+    display: grid;
+  }
+  header .menu.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+  header .right > a {
+    display: none;
+  }
+}
+header .logo {
+  cursor: pointer;
+}
+header .left,
+header .right {
+  display: flex;
+  align-items: center;
+  gap: 59px;
+}
+header .right {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+header .right > * {
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+header .right > *:not(.cart):hover {
+  color: #393;
+}
+header .right .cart {
+  margin-left: 114px;
+  position: relative;
+}
+header .right .cart .cart-count {
+  position: absolute;
+  pointer-events: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #393;
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%;
+  top: -4px;
+  right: 13px;
+}
+header .green-btn {
+  border-radius: 5px;
+  border: 2px solid #393;
+  background: #393;
+  padding: 14px 30px 15px 30px;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+header .active {
+  color: #393;
+  font-weight: 600;
+}
+/* ----------------------SECTION I------------------------------- */
+main section.group-hero {
+  background-color: #a1e2eb;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+@media (max-width: 960px) {
+  main section.group-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 100px;
+  }
+}
+main section.group-hero .left {
+  flex-grow: 1;
+}
+main section.group-hero .title {
+  font-size: 80px;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  /* 104px */
+  margin-bottom: 60px;
+}
+main section.group-hero .title span {
+  font-size: 63px;
+}
+main section.group-hero .btns {
+  display: flex;
+  gap: 19px;
+}
+main section.group-hero .btns button {
+  /* padding: 25px 50px;
+    */
+  width: 155px;
+  height: 82px;
+  border-radius: 13px;
+  border: none;
+  background-color: #fff;
+  color: #2d2d2d;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  /* 32.5px */
+  cursor: pointer;
+}
+main section.group-hero .btns button.secondary {
+  width: 230px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+/*----------------------------------SECTION II---------------------------------------------------*/
+main section.categories {
+  padding: 40px 30px;
+  padding-bottom: 89px;
+}
+main section.categories.big {
+  padding: 0 30px;
+  padding-bottom: 50px;
+}
+main section.categories.big .top {
+  margin-bottom: 81px;
+  margin-top: 0;
+}
+main section.categories .top {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+  margin-bottom: 20px;
+}
+main section.categories .top .title {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  /* 52px */
+  letter-spacing: 1.2px;
+}
+main section.categories .top button {
+  color: #8b8b8b;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  /* 15.6px */
+  letter-spacing: 0.36px;
+  width: 120px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid #8b8b8b;
+  cursor: pointer;
+}
+main section.categories .bottom {
+  display: grid;
+  /* flex-wrap: wrap;
+    */
+  grid-template-columns: repeat(4, 318px);
+  gap: 58px 32px;
+}
+@media (max-width: 1444px) {
+  main section.categories .bottom {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main section.categories .bottom > * {
+    max-width: 318px;
+  }
+}
+main section.categories .bottom img {
+  width: 100%;
+  max-width: 318px;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+main section.categories .bottom .item {
+  cursor: pointer;
+}
+main section.categories .bottom .item-name {
+  text-align: center;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 23.4px */
+  letter-spacing: 0.54px;
+}
+/*------------------------------------SECTION III-------------------------------------------------------*/
+main section.sales {
+  background: linear-gradient(263deg, #393 -0.43%, #006300 104.36%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  min-height: 476px;
+  padding-left: 91px;
+  padding-right: 152px;
+}
+@media (max-width: 1090px) {
+  main section.sales {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 150px;
+    gap: 50px;
+  }
+}
+main section.sales .right {
+  width: 100%;
+  display: grid;
+}
+main section.sales .right .title-top {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 108px */
+  letter-spacing: 2.7px;
+}
+main section.sales .right .title-bottom {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 1.5px;
+  margin-bottom: 46px;
+}
+main section.sales .right span {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: 2.7px;
+}
+main section.sales .right input,
+main section.sales .right button {
+  width: 473px;
+  height: 75.441px;
+  border-radius: 25.147px;
+  border: none;
+}
+main section.sales .right input {
+  margin-bottom: 30px;
+  padding: 0 50px;
+  color: #6c6c6c;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  
+  letter-spacing: 0.54px;
+}
+main section.sales .right button {
+  background-color: transparent;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 28.739px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 34.487px */
+  letter-spacing: 0.862px;
+  border: 2.395px solid #fff;
+  cursor: pointer;
+}
+main section.stock {
+  padding: 49px 30px;
+  padding-bottom: 44px;
+}
+main section.stock:has(.filters) {
+  padding-top: 0;
+}
+main section.stock:has(.filters) .filters {
+  display: flex;
+  margin-bottom: 47px;
+
+  flex-wrap: wrap;
+  gap: 30px 0;
+
+}
+main section.stock:has(.filters) .filters span,
+main section.stock:has(.filters) .filters label {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+}
+main section.stock:has(.filters) .filters > div {
+  display: flex;
+  align-items: center;
+}
+main section.stock:has(.filters) .filters .price {
+  margin-right: 40px;
+  gap: 15px;
+}
+main section.stock:has(.filters) .filters .price input {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #000;
+  width: 103px;
+}
+main section.stock:has(.filters) .filters .discount {
+  margin-right: 91px;
+  gap: 39px;
+}
+main section.stock:has(.filters) .filters .discount input {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+}
+main section.stock:has(.filters) .filters .sort {
+  gap: 42px;
+}
+main section.stock:has(.filters) .filters .sort select {
+  padding: 10px;
+  color: #797979;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  /* 20.8px */
+  letter-spacing: 0.48px;
+  border-radius: 7px;
+  border: 1px solid #000;
+  width: 219px;
+}
+main section.stock:has(.filters) .stock-item {
+  margin-bottom: 81px;
+}
+main section.stock .stock-item {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 1.2px;
+  margin-bottom: 21px;
+}
+main section.stock .stock-container {
+  gap: 44px 34px;
+  display: grid;
+  grid-template-columns: repeat(4, 318px);
+}
+@media (max-width: 1444px) {
+  main section.stock .stock-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main section.stock .stock-container > * {
+    max-width: 318px;
+  }
+}
+main section.stock .stock-container .container-item .thumbnail {
+  position: relative;
+  margin-bottom: 20px;
+}
+main section.stock .stock-container .container-item .thumbnail button {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  color: #393;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 23.4px */
+  border-radius: 21px;
+  border: 2px solid #393;
+  background: #f1fff1;
+  width: 279px;
+  height: 72px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+main section.stock .stock-container .container-item .thumbnail img {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 21px;
+}
+main section.stock .stock-container .container-item:hover .thumbnail button {
+  opacity: 1;
+  transform: translateY(0);
+}
+main section.stock .stock-container .container-item .prices {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 39px */
+  letter-spacing: 0.9px;
+  padding-left: 24px;
+  padding-right: 46px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 12px;
+    */
+}
+main section.stock .stock-container .container-item .prices .p {
+  font-size: 20px;
+}
+main section.stock .stock-container .container-item .prices .og-price {
+  color: #8b8b8b;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  /* 26px */
+  letter-spacing: 0.6px;
+  text-decoration: line-through;
+}
+main section.stock .stock-container .container-item .prices .sale {
+  color: #ff32a1;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 26px */
+  letter-spacing: 0.6px;
+}
+main section.stock .stock-container .container-item .title {
+  color: #3a3a3a;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  /* 20.8px */
+  letter-spacing: 0.48px;
+  padding-left: 24px;
+  padding-right: 11px;
+}
+/*------------------------------------FOOTER-------------------------------------------------------*/
+footer {
+  padding: 48px 32px;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 100px 0;
+  margin-bottom: 47px;
+}
+footer .left {
+  min-width: 600px;
+}
+footer .container .kontackt {
+  margin-bottom: 25px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  /* 52px */
+}
+footer .container .phone {
+  display: flex;
+  margin-bottom: 30px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 91px */
+}
+footer .container .social-netrwork {
+  display: flex;
+  gap: 33px;
+}
+footer .container .social-netrwork-item {
+  text-align: center;
+}
+footer .container .social-netrwork-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+footer .container .social-netrwork-item p {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 19.5px */
+}
+footer .rigth {
+  min-width: 536px;
+}
+footer .container .adress {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+footer .container .city {
+  padding-top: 25px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+footer .container .city a:visited {
+  color: inherit;
+}
+footer .container .work-regim {
+  padding-top: 20px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+footer .container .work-regim2 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+section.goods {  
+  padding-left: 30px;
+  padding-right: 90px;
+  padding-bottom: 184px;
+  padding-top: 61px;
+
+  @media (max-width:1100px) {
+    padding-right: 30px;
+ }
+}
+section.goods .title {
+  color: #3a3a3a;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  
+  letter-spacing: 1.08px;
+  margin-bottom: 30px;
+}
+section.goods .left,
+section.goods .right {
+  width: 100%;
+}
+
+section.goods .right{
+  max-width: 425px;
+  @media (max-width:1100px) {
+    max-width: unset;
+ }
+}
+section.goods .left img {
+  width: 100%;  
+  height: 710px;
+
+
+  object-fit: cover;
+}
+section.goods .product {
+  display: flex;
+  gap: 131px;
+@media (max-width:1100px) {
+   flex-direction: column;
+   gap: 0;
+}
+
+
+}
+section.goods .product .right {
+  padding-top: 68px;
+}
+section.goods .product .right .price {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+
+  letter-spacing: 2.1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+section.goods .product .right .price span.default {
+  color: #8b8b8b;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  
+  letter-spacing: 0.6px;
+  text-decoration-line: strikethrough;
+  margin-bottom: 17px;
+}
+section.goods .product .right .price span.sale {
+  color: #ff32a1;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 36.4px */
+  letter-spacing: 0.84px;
+  margin-bottom: 12px;
+}
+section.goods .product .right button {
+  border-radius: 10px;
+  border: 2px solid #393;
+  background: #393;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  /* 36.4px */
+  width: 341px;
+  height: 86px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+section.goods .product .right .dotted-line {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 25px;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23C0C0C0FF' stroke-width='2' stroke-dasharray='6%2c 14' stroke-dashoffset='3' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+section.goods .product .right .description {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  /* 26px */
+  letter-spacing: 0.6px;
+}
+section.goods .product .right .description .description-title {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+/*------------------------------------SECTION CART-------------------------------------------------------*/
+section.cart {
+  display: flex;
+  padding-bottom: 143px;
+  padding-right: 30px;
+  padding-left: 30px;
+  gap: 60px;
+
+  @media (max-width:1233px) {
+    flex-direction: column;
+
+    .right{
+      padding-top: 0 !important;
+    }
+  }
+}
+section.cart > * {
+  width: 100%;
+}
+section.cart .left .title {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+}
+section.cart .left button {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: auto;
+  margin-bottom: 34px;
+}
+section.cart .left .cart-items .item {
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  position: relative;
+  border-bottom: 1px solid #a7a7a7;
+}
+section.cart .left .cart-items .item:first-of-type {
+  border-top: 1px solid #a7a7a7;
+}
+section.cart .left .cart-items .item .image {
+  margin-right: 29px;
+}
+section.cart .left .cart-items .item .image img {
+  width: 192px;
+  height: 166.64px;
+}
+section.cart .left .cart-items .item .title-wrapper {
+  max-width: 318px;
+  display: flex;
+  flex-direction: column;
+  gap: 71px;
+  margin-right: 24px;
+
+  flex-grow: 1;
+
+
+}
+section.cart .left .cart-items .item .title-wrapper .title {
+  all: unset;
+  color: #3a3a3a;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 23.4px */
+  letter-spacing: 0.54px;
+}
+section.cart .left .cart-items .item .title-wrapper .quantity {
+  display: grid;
+  align-items: center;
+  max-width: 140px;
+  height: 40px;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 12px;
+  border: 1px solid #000;
+}
+section.cart .left .cart-items .item .title-wrapper .quantity input {
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 23.4px */
+  letter-spacing: 0.54px;
+}
+section.cart .left .cart-items .item .title-wrapper .quantity button {
+  all: unset;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+section.cart .left .cart-items .item .price {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 85%;
+  /* 52px */
+  letter-spacing: 1.2px;
+  margin-right: 70px;
+  display: flex;
+  align-items: flex-end;
+}
+section.cart .left .cart-items .item .price .dolar {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.6px;
+}
+section.cart .left .cart-items .item .discount-price {
+  color: #8b8b8b;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  /* 26px */
+  letter-spacing: 0.6px;
+  text-decoration-line: strikethrough;
+}
+section.cart .left .cart-items .item .remove {
+  position: absolute;
+  right: 0;
+  top: 37.8px;
+  cursor: pointer;
+}
+section.cart .right {
+  max-width: 496px;
+  padding-top: 122px;
+  position: relative;
+}
+section.cart .right .box {
+  position: sticky;
+  top: 122px;
+  border-radius: 21px;
+  border: 2px solid #000;
+  padding: 25px;
+}
+section.cart .right .box .title {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 36.4px */
+  letter-spacing: 0.84px;
+  margin-bottom: 42px;
+}
+section.cart .right .box .total {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 18px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  /* 31.2px */
+  letter-spacing: 0.72px;
+  margin-bottom: 49px;
+}
+section.cart .right .box .total .price {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0.96px;
+  display: flex;
+  align-items: flex-end;
+}
+section.cart .right .box .total .dolar {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 100%;
+  padding-bottom: 3px;
+}
+section.cart .right .box input {
+  color: #929292;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  /* 23.4px */
+  letter-spacing: 0.54px;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: #fff;
+  width: 100%;
+  margin-bottom: 25px;
+}
+section.cart .right .box button {
+  width: 100%;
+  height: 76px;
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  /* 36.4px */
+  letter-spacing: 0.84px;
+  border-radius: 17px;
+  background: #393;
+  border: none;
+  cursor: pointer;
+}
+
+section.error{
+  img{
+     width: 100%;
+  }
+ 
+}
